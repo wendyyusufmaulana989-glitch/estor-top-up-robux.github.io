@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ESTOR Top Up • Roblox</title>
+<meta name="description" content="ESTOR Top Up - Top up Robux cepat & aman. Bayar via QRIS (hubungi admin). Verifikasi via WhatsApp. Garansi jika 2x gagal." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ccircle cx='50' cy='50' r='28' fill='%23ffd700'/%3E%3C/text%3E%3C/svg%3E">
+<!-- Tailwind via CDN for quick layout -->
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* custom overrides for elegant black→gold theme */
+  body { background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(255,215,0,0.10), transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, rgba(255,215,0,0.06), transparent 60%),
+    linear-gradient(135deg,#060606 0%, #0e0b07 60%, #1a1200 100%);
+    color: #f4f4f5;
+    -webkit-font-smoothing:antialiased;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  .gold-gradient { background: linear-gradient(90deg,#b08900,#ffd700,#c9a000); color: #000; }
+  .gold-text { background: linear-gradient(90deg,#ffe07a,#ffd700,#ffefb0); -webkit-background-clip:text; background-clip:text; color: transparent; }
+  .card { background: rgba(17,17,17,0.7); border: 1px solid rgba(255,215,0,0.12); box-shadow: 0 6px 30px rgba(0,0,0,0.6); }
+  .strike { text-decoration: line-through; opacity: .6; color: #cfcfcf; }
+  .badge { background: linear-gradient(90deg,#ffb347,#ffcc33); color:#000; font-weight:700; padding:4px 8px; border-radius:999px; font-size:0.75rem; }
+  /* best-seller special */
+  .bestseller { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(198,155,0,0.24); border:1px solid rgba(255,215,0,0.35); }
+  /* receipt modal */
+  .modal-backdrop { background: rgba(0,0,0,0.6); position: fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:60; }
+  .receipt { width: 320px; max-width:92%; border-radius:12px; background: linear-gradient(180deg,#fff,#fff); color:#111; padding:18px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+  .receipt h4 { margin:0 0 8px 0; font-weight:800; color:#111; }
+  .small { font-size:0.85rem; color:#444; }
+  @media (min-width:900px) {
+    .receipt { width:420px; }
+  }
+</style>
+</head>
+<body class="selection:bg-yellow-300 selection:text-black">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 border-b border-yellow-400/10 bg-black/30 backdrop-blur">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl flex items-center justify-center ring-1 ring-yellow-400/30 bg-black/60">
+        <span class="text-yellow-300 font-extrabold">E</span>
+      </div>
+      <div>
+        <div class="text-sm font-semibold gold-text">ESTOR Top Up</div>
+        <div class="text-xs text-yellow-200/70">Robux • Aman & Cepat</div>
+      </div>
+    </div>
+    <div class="hidden sm:flex items-center gap-4">
+      <a href="#harga" class="text-sm text-yellow-100/80 hover:text-white">Harga</a>
+      <a href="#order" class="text-sm text-yellow-100/80 hover:text-white">Top Up</a>
+      <a href="#faq" class="text-sm text-yellow-100/80 hover:text-white">FAQ</a>
+      <a href="#kontak" class="px-3 py-1 rounded-lg text-sm gold-text ring-1 ring-yellow-400/18 hover:opacity-95" id="waTop">Chat Admin</a>
+    </div>
+    <button id="menuBtn" class="sm:hidden px-3 py-2 rounded bg-yellow-400/10 text-yellow-300">Menu</button>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+
+  <!-- HERO -->
+  <section class="grid md:grid-cols-2 gap-6 items-center">
+    <div>
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Top Up <span class="gold-text">Robux</span> <br/> Gampang & Aman!</h1>
+      <p class="mt-4 text-neutral-300">Bayar lewat QRIS atau e-wallet. Untuk pembayaran QRIS, silakan hubungi admin terlebih dahulu. Verifikasi melalui WhatsApp. Tanpa minta password.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#order" class="px-4 py-2 rounded-xl gold-gradient font-semibold shadow">Mulai Top Up</a>
+        <a href="#harga" class="px-4 py-2 rounded-xl border border-yellow-400/20 hover:bg-yellow-400/10">Lihat Harga</a>
+      </div>
+      <div class="mt-6 flex gap-3">
+        <span class="badge">Tanpa Password</span>
+        <span class="badge">Verifikasi WA</span>
+        <span class="badge">Garansi Order</span>
+      </div>
+    </div>
+
+    <!-- Promotional posters (stylized placeholders) -->
+    <aside class="card rounded-2xl p-4">
+      <div class="grid grid-cols-2 gap-3">
+        <div class="rounded-lg bg-gradient-to-br from-yellow-600 via-yellow-400 to-yellow-200 p-3 text-black flex flex-col items-start justify-between">
+          <div class="text-xs font-semibold">Roblox Sultan</div>
+          <div class="text-sm font-bold">Akun Premium</div>
+          <div class="mt-2 text-xs">Visual Poster</div>
+        </div>
+        <div class="rounded-lg bg-gradient-to-br from-black/60 to-yellow-700/20 p-3 text-white flex flex-col items-start justify-between">
+          <div class="text-xs">Promo</div>
+          <div class="text-sm font-bold">Top Up Aman</div>
+          <div class="mt-2 text-xs">Instan / 1-30 menit</div>
+        </div>
+        <div class="rounded-lg bg-black/70 p-3 text-yellow-200 col-span-2 text-center">
+          <div class="text-sm">Butuh bantuan pembayaran QRIS? Hubungi admin dulu via WA.</div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section id="order" class="grid md:grid-cols-2 gap-6 items-start">
+    <form id="orderForm" class="card rounded-2xl p-6 space-y-4">
+      <h2 class="text-xl font-bold">Form Top Up</h2>
+
+      <div>
+        <label class="text-sm block mb-1">Username Roblox</label>
+        <input id="rbxUsername" type="text" placeholder="mis. NoobMaster69" required class="w-full rounded-xl px-3 py-2 bg-black/60 border border-yellow-400/10" />
+      </div>
+
+      <div>
+        <label class="text-sm block mb-1">User ID Roblox</label>
+        <input id="rbxUserId" type="number" placeholder="mis. 1234567890" required class="w-full rounded-xl px-3 py-2 bg-black/60 border border-yellow-400/10" />
+        <p class="text-xs text-neutral-400 mt-1">Contoh link profil: roblox.com/users/&lt;id&gt;/profile</p>
+      </div>
+
+      <div>
+        <label class="text-sm block mb-1">Nomor WhatsApp</label>
+        <input id="buyerWa" type="tel" placeholder="08xxxxxxxxxx" required class="w-full rounded-xl px-3 py-2 bg-black/60 border border-yellow-400/10" />
+      </div>
+
+      <div>
+        <label class="text-sm block mb-1">Paket Robux</label>
+        <select id="package" required class="w-full rounded-xl px-3 py-2 bg-black/60 border border-yellow-400/10"></select>
+      </div>
+
+      <div>
+        <label class="text-sm block mb-1">Catatan (opsional)</label>
+        <textarea id="notes" rows="3" class="w-full rounded-xl px-3 py-2 bg-black/60 border border-yellow-400/10" placeholder="Contoh: minta kirim jam 20.00"></textarea>
+      </div>
+
+      <div class="flex items-start gap-2">
+        <input id="tos" type="checkbox" required class="mt-1" />
+        <label for="tos" class="text-sm">Saya setuju syarat layanan & konfirmasi tanpa password.</label>
+      </div>
+
+      <div class="flex gap-3">
+        <button type="submit" class="gold-gradient px-4 py-2 rounded-xl font-semibold text-black">Proses & Chat WA</button>
+        <button type="button" id="copySummary" class="px-4 py-2 rounded-xl border border-yellow-400/10">Salin Ringkasan</button>
+      </div>
+
+      <p id="formMsg" class="text-sm text-emerald-400 hidden">Ringkasan siap & WA terbuka.</p>
+    </form>
+
+    <!-- right column: pricing and bestsellers -->
+    <aside class="space-y-4">
+      <div id="priceGrid" class="grid gap-4"></div>
+
+      <div class="card rounded-2xl p-4">
+        <h3 class="font-semibold">Estimasi Waktu</h3>
+        <p class="text-sm text-neutral-300">Semua paket: Instan - 1–30 menit setelah verifikasi pembayaran.</p>
+      </div>
+
+      <div class="card rounded-2xl p-4">
+        <h3 class="font-semibold">Catatan Pembayaran</h3>
+        <p class="text-sm text-neutral-300">Untuk pembayaran QRIS, hubungi admin lewat WhatsApp <strong>087849467736</strong> sebelum melakukan pembayaran.</p>
+      </div>
+    </aside>
+  </section>
+
+  <!-- TRUST & TESTIMONIALS -->
+  <section class="grid md:grid-cols-3 gap-4">
+    <div class="card rounded-2xl p-5">
+      <p class="text-lg font-semibold">Aman & Terpercaya</p>
+      <p class="text-sm text-neutral-300 mt-1">Data transaksi dicatat, tanpa minta password.</p>
+    </div>
+    <div class="card rounded-2xl p-5">
+      <p class="text-lg font-semibold">Respon Cepat</p>
+      <p class="text-sm text-neutral-300 mt-1">Admin online & verifikasi cepat.</p>
+    </div>
+    <div class="card rounded-2xl p-5">
+      <p class="text-lg font-semibold">Garansi Jaminan</p>
+      <p class="text-sm text-neutral-300 mt-1">Jika 2x transaksi gagal, pelanggan klaim akun Roblox gratis (lihat struk).</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="grid md:grid-cols-2 gap-4">
+    <div class="card rounded-2xl p-4">
+      <p class="font-semibold">Apakah butuh password?</p>
+      <p class="text-sm text-neutral-300 mt-1">Tidak, cukup Username & User ID. Kami tidak meminta password.</p>
+    </div>
+    <div class="card rounded-2xl p-4">
+      <p class="font-semibold">Bagaimana cara pembayaran QRIS?</p>
+      <p class="text-sm text-neutral-300 mt-1">Hubungi admin WA untuk instruksi & QRIS statis.</p>
+    </div>
+    <div class="card rounded-2xl p-4">
+      <p class="font-semibold">Apa itu jaminan akun gratis?</p>
+      <p class="text-sm text-neutral-300 mt-1">Jika transaksi gagal 2x (konfirmasi admin), pelanggan berhak atas satu akun Roblox gratis sebagai kompensasi.</p>
+    </div>
+    <div class="card rounded-2xl p-4">
+      <p class="font-semibold">Berapa lama proses?</p>
+      <p class="text-sm text-neutral-300 mt-1">Instan—1 sampai 30 menit setelah verifikasi.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="kontak" class="card rounded-2xl p-4">
+    <h3 class="font-semibold">Kontak Admin</h3>
+    <p class="text-sm text-neutral-300 mt-1">WhatsApp: <a id="adminWaLink" class="underline text-yellow-200" href="#" target="_blank">Chat Sekarang</a></p>
+  </section>
+
+</main>
+
+<!-- receipt modal (hidden) -->
+<div id="receiptModal" class="hidden" aria-hidden="true">
+  <div class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="receipt">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h4>ESTOR Top Up</h4>
+        <div class="small">Struk Elektronik</div>
+      </div>
+      <hr style="border:none;border-top:1px solid #eee;margin:8px 0" />
+      <div id="receiptBody" style="font-size:0.95rem;color:#222"></div>
+      <hr style="border:none;border-top:1px solid #eee;margin:8px 0" />
+      <div class="small">Jaminan: Jika 2x transaksi gagal, Anda berhak menerima akun Roblox gratis dari ESTOR Top Up.</div>
+      <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end">
+        <button id="closeReceipt" class="px-3 py-1 rounded bg-black/10">Tutup</button>
+        <button id="downloadReceipt" class="px-3 py-1 rounded gold-gradient">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="py-6 text-center text-xs text-neutral-400">
+  &copy; <span id="y"></span> ESTOR Top Up. Bukan situs resmi Roblox.
+</footer>
+
+<script>
+  // Config
+  const ADMIN_WA_LOCAL = '087849467736';
+  const ADMIN_WA_INTL = '6287849467736'; // 0878... => 62878...
+  // Packages (from your table)
+  const PACKS = [
+    {name:'80 Robux', market:10500},
+    {name:'400 Robux', market:45500},
+    {name:'800 Robux', market:84000},
+    {name:'1.700 Robux', market:168000, best:true},
+    {name:'4.500 Robux', market:420000},
+    {name:'10.000 Robux', market:880000, best:true},
+  ];
+  const DISCOUNT = 0.40; // 40%
+  const computed = PACKS.map(p=> ({...p, special: Math.round(p.market*(1-DISCOUNT))}));
+
+  function idr(n){ return 'Rp ' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+
+  // render price grid: bestsellers highlighted
+  const grid = document.getElementById('priceGrid');
+  grid.innerHTML = computed.map((p, idx) => {
+    const isBest = p.best;
+    return `
+      <div class="card rounded-2xl p-4 ${isBest ? 'bestseller' : ''}">
+        <div class="flex items-start justify-between">
+          <div>
+            <div class="text-sm text-neutral-300">${p.name}</div>
+            <div class="mt-1 ${isBest ? 'text-3xl font-extrabold text-yellow-300' : 'text-2xl font-bold text-yellow-200'}">${idr(p.special)}</div>
+            <div class="mt-1 strike text-sm">${idr(p.market)}</div>
+          </div>
+          <div class="text-right">
+            ${isBest ? '<div class="badge">🔥 Best Seller</div>' : ''}
+            <div class="text-xs text-neutral-400 mt-3">Estimasi: 1–30 menit</div>
+            <button data-idx="${idx}" class="mt-3 block w-full px-3 py-2 rounded-xl gold-gradient text-black font-semibold choose">Pilih</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // populate select
+  const sel = document.getElementById('package');
+  sel.innerHTML = computed.map((p,i)=> `<option value="${i}">${p.name} — ${idr(p.special)}</option>`).join('');
+
+  // choose from price grid
+  document.querySelectorAll('.choose').forEach(b=>{
+    b.addEventListener('click', (e)=>{
+      const i = e.currentTarget.dataset.idx;
+      sel.value = i;
+      window.location.hash = '#order';
+      document.getElementById('rbxUsername').focus();
+    });
+  });
+
+  // WA link
+  document.getElementById('adminWaLink').href = `https://wa.me/${ADMIN_WA_INTL}`;
+  document.getElementById('waTop').href = `https://wa.me/${ADMIN_WA_INTL}`;
+
+  // Order submit
+  const form = document.getElementById('orderForm');
+  form.addEventListener('submit', (ev)=>{
+    ev.preventDefault();
+    const username = document.getElementById('rbxUsername').value.trim();
+    const userId = document.getElementById('rbxUserId').value.trim();
+    const phone = document.getElementById('buyerWa').value.trim();
+    const idx = parseInt(document.getElementById('package').value,10);
+    const notes = document.getElementById('notes').value.trim();
+    if(!username || !userId || isNaN(idx)) { alert('Lengkapi form terlebih dahulu'); return; }
+    const pack = computed[idx];
+    const total = idr(pack.special);
+    // build WA message
+    const msg = `Halo Admin, saya mau top up Robux.%0A- Username: ${encodeURIComponent(username)}%0A- User ID: ${encodeURIComponent(userId)}%0A- Paket: ${encodeURIComponent(pack.name)}%0A- Total: ${encodeURIComponent(total)}%0A- WA: ${encodeURIComponent(phone)}%0A- Catatan: ${encodeURIComponent(notes||'-')}`;
+    // show receipt modal
+    showReceipt({username,userId,phone,pack,total,notes});
+    // open WhatsApp to chat with admin
+    const waUrl = `https://wa.me/${ADMIN_WA_INTL}?text=${msg}`;
+    window.open(waUrl,'_blank');
+    document.getElementById('formMsg').classList.remove('hidden');
+  });
+
+  // copy summary
+  document.getElementById('copySummary').addEventListener('click', ()=>{
+    const username = document.getElementById('rbxUsername').value.trim();
+    const userId = document.getElementById('rbxUserId').value.trim();
+    const idx = parseInt(document.getElementById('package').value,10);
+    const pack = computed[idx];
+    const notes = document.getElementById('notes').value.trim();
+    const text = `Order Robux\n- Username: ${username}\n- User ID: ${userId}\n- Paket: ${pack.name}\n- Total: ${idr(pack.special)}\n- Catatan: ${notes||'-'}\nPembayaran: Hubungi admin WA ${ADMIN_WA_LOCAL}`;
+    navigator.clipboard.writeText(text).then(()=> {
+      const m = document.getElementById('formMsg'); m.textContent='Ringkasan tersalin ke clipboard ✅'; m.classList.remove('hidden');
+      setTimeout(()=> m.classList.add('hidden'),2500);
+    });
+  });
+
+  // Receipt modal functions
+  function showReceipt(data){
+    const modal = document.getElementById('receiptModal');
+    const body = document.getElementById('receiptBody');
+    const now = new Date();
+    const t = now.toLocaleString();
+    body.innerHTML = `
+      <div style="font-weight:700;margin-bottom:6px">${data.pack.name} • ${data.total}</div>
+      <div class="small">User: ${escapeHtml(data.username)}</div>
+      <div class="small">User ID: ${escapeHtml(data.userId)}</div>
+      <div class="small">WA: ${escapeHtml(data.phone)}</div>
+      <div class="small">Catatan: ${escapeHtml(data.notes||'-')}</div>
+      <div style="margin-top:8px;font-size:0.9rem;color:#333">Tanggal: ${t}</div>
+      <div style="margin-top:8px;font-size:0.9rem;color:#333">Status: Menunggu Pembayaran & Verifikasi</div>
+    `;
+    modal.classList.remove('hidden'); modal.setAttribute('aria-hidden','false');
+  }
+
+  document.getElementById('closeReceipt').addEventListener('click', ()=> {
+    const modal = document.getElementById('receiptModal'); modal.classList.add('hidden'); modal.setAttribute('aria-hidden','true');
+  });
+
+  // download receipt as PNG (simple approach using window.print)
+  document.getElementById('downloadReceipt').addEventListener('click', ()=> {
+    // open printable window
+    const r = document.getElementById('receiptBody').innerHTML;
+    const html = `<html><head><meta charset="utf-8"><title>Struk ESTOR Top Up</title></head><body><div style="font-family:Arial;padding:20px;border:1px solid #ddd">${document.querySelector('.receipt').innerHTML}</div></body></html>`;
+    const w = window.open('','_blank'); w.document.write(html); w.document.close(); w.print();
+  });
+
+  // helper
+  function escapeHtml(s){ if(!s) return ''; return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  // footer year
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>
